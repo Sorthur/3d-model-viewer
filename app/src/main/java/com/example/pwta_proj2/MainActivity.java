@@ -85,12 +85,9 @@ public class MainActivity extends AppCompatActivity {
         TransformableNode transform = new TransformableNode(arFragment.getTransformationSystem());
 
         // change size
-        float x = (float)(1f*Math.pow(10, 11));
-        float y = (float)(1f*Math.pow(10, 30));
-        System.out.println(x);
-        System.out.println(y);
-        transform.setWorldScale(new Vector3(x,x,x));
-        transform.setLocalScale(new Vector3(y,y,y));
+        float x1 = 0.1f, x2 = 0.1f;
+        transform.setWorldScale(new Vector3(x1, x1, x1));
+        transform.setLocalScale(new Vector3(x2, x2 ,x2));
         // attaching the anchorNode with the TransformableNode
         transform.setParent(anchorNode);
 
