@@ -33,7 +33,7 @@ import com.google.ar.sceneform.ux.TransformableNode;
 import java.lang.ref.WeakReference;
 import java.util.concurrent.CompletableFuture;
 
-public class MainActivity extends AppCompatActivity implements BaseArFragment.OnTapArPlaneListener{
+public class MainActivity extends AppCompatActivity {
 
     private ModelRenderable breadRenderable;
     private SceneView backgroundSceneView;
