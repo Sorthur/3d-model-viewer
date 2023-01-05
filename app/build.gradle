@@ -2,10 +2,14 @@ buildscript {
     repositories {
         google()
         jcenter()
+        maven {url 'https://mvnrepository.com/artifact/com.dinuscxj/multitouchgesturedetector'}
+
+
     }
     dependencies {
         classpath "com.android.tools.build:gradle:7.3.1"
         classpath 'com.google.ar.sceneform:plugin:1.15.0'
+
     }
 }
 plugins {
@@ -59,6 +63,7 @@ dependencies {
 
     // Alternatively, use ArSceneView without the UX dependency.
     implementation 'com.google.ar.sceneform:core:1.15.0'
+    implementation 'com.dinuscxj:multitouchgesturedetector:1.0.0'
 
 //    implementation "com.gorisse.thomas.sceneform:sceneform:1.21.0"
     implementation "androidx.fragment:fragment:1.5.5"
