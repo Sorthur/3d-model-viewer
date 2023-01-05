@@ -34,7 +34,7 @@
       'Orientation',
     ],
     collision: {},
-    file: 'sampledata/bread.obj',
+    file: 'sampledata/bread/bread.obj',
     name: 'bread',
     recenter: 'root',
     scale: 0.22663700000000001,
