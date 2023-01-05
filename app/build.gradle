@@ -71,3 +71,8 @@ sceneform.asset('sampledata/bread/bread.obj', // 'Source Asset Path' specified d
         'default',                         // 'Material Path' specified during import.
         'sampledata/bread/bread.sfa',             // '.sfa Output Path' specified during import.
         'src/main/res/raw/bread')
+
+sceneform.asset('sampledata/dom/dom3d.obj', // 'Source Asset Path' specified during import.
+        'default',                         // 'Material Path' specified during import.
+        'sampledata/dom/dom3d.sfa',             // '.sfa Output Path' specified during import.
+        'src/main/res/raw/dom3d')

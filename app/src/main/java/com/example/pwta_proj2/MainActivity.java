@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
                 Anchor anchor = hitResult.createAnchor();
                 ModelRenderable.builder()
-                        .setSource(this, R.raw.bread)
+                        .setSource(this, R.raw.dom3d)
 
 //                        .setIsFilamentGltf(true)
                         .build()
