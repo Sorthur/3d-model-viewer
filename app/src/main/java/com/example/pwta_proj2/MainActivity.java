@@ -72,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
     private ViewRenderable viewRenderable;
     private FragmentManager supportFragmentManager;
     private int clickNo = 0;
+    private int chosen3dModel;
     int requestCode = 1;
 
     @Override
@@ -90,6 +91,38 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void runViewer3d(View v) {
+        String[] listItems = new String[]{"dom - OBJ file"};
+        final int[] checkedItem = {-1};
+
+        builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle("3D Model");
+
+        builder.setSingleChoiceItems(listItems, -1, (dialog, which) -> {
+            checkedItem[0] = which;
+            TextView textViewStatus = findViewById(R.id.textViewStatus);
+            textViewStatus.setText(listItems[which]);
+
+            imgView = findViewById(R.id.imageView);
+
+            switch (listItems[which]) {
+                case "dom - OBJ file":
+                    chosen3dModel = R.raw.dom3d;
+                    break;
+                default:
+                    dialog.dismiss();
+            }
+
+            dialog.dismiss();
+            set3dModel(chosen3dModel);
+        }).setNegativeButton("Cancel", (dialog, which) -> {
+
+        });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+    private void set3dModel(int chosen3dModelId) {
         try {
             setContentView(R.layout.viewer_3d);
         } catch (Exception e) {
@@ -100,22 +133,17 @@ public class MainActivity extends AppCompatActivity {
         arFragment = (ArFragment) supportFragmentManager.findFragmentById(R.id.arFragment);
 
         arFragment.setOnTapArPlaneListener((hitResult, plane, motionEvent) -> {
-
             clickNo++;
-
-            // the 3d model comes to the scene only the first time we tap the screen
             if (clickNo == 1) {
 
                 Anchor anchor = hitResult.createAnchor();
                 ModelRenderable.builder()
-                        .setSource(this, R.raw.dom3d)
-
-//                        .setIsFilamentGltf(true)
+                        .setSource(this, chosen3dModelId)
                         .build()
                         .thenAccept(modelRenderable -> addModel(anchor, modelRenderable))
                         .exceptionally(throwable -> {
                             AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                            builder.setMessage("Something is not right" + throwable.getMessage()).show();
+                            builder.setMessage("Error: " + throwable.getMessage()).show();
                             return null;
                         });
             }
@@ -123,11 +151,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void addModel(Anchor anchor, ModelRenderable modelRenderable) {
-
-        // Creating a AnchorNode with a specific anchor
         AnchorNode anchorNode = new AnchorNode(anchor);
 
-        // attaching the anchorNode with the ArFragment
         anchorNode.setParent(arFragment.getArSceneView().getScene());
         TransformableNode transform = new TransformableNode(arFragment.getTransformationSystem());
 
@@ -135,11 +160,8 @@ public class MainActivity extends AppCompatActivity {
         float x1 = 0.1f, x2 = 0.1f;
         transform.setWorldScale(new Vector3(x1, x1, x1));
         transform.setLocalScale(new Vector3(x2, x2 ,x2));
-        // attaching the anchorNode with the TransformableNode
         transform.setParent(anchorNode);
 
-        // attaching the 3d model with the TransformableNode that is
-        // already attached with the node
         transform.setRenderable(modelRenderable);
         transform.select();
     }
@@ -203,6 +225,5 @@ public class MainActivity extends AppCompatActivity {
 
         AlertDialog dialog = builder.create();
         dialog.show();
-
     }
 }
