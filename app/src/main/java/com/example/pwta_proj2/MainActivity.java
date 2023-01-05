@@ -1,15 +1,19 @@
 package com.example.pwta_proj2;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
+import android.view.View;
 import android.widget.Toast;
 
 import com.google.ar.core.Anchor;
@@ -42,13 +46,29 @@ public class MainActivity extends AppCompatActivity {
     private ArFragment arFragment;
     private Renderable model;
     private ViewRenderable viewRenderable;
+    private FragmentManager supportFragmentManager;
     private int clickNo = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main );
-        FragmentManager supportFragmentManager = getSupportFragmentManager();
+        setContentView(R.layout.activity_main);
+        supportFragmentManager = getSupportFragmentManager();
+    }
+
+    public void turnOfAr(View v) {
+        setContentView(R.layout.activity_main);
+        arFragment = null;
+    }
+
+    public void runViewer3d(View v) {
+        try {
+            setContentView(R.layout.viewer_3d);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+
         // Load model.glb from assets folder or http url
         arFragment = (ArFragment) supportFragmentManager.findFragmentById(R.id.arFragment);
 
@@ -96,65 +116,4 @@ public class MainActivity extends AppCompatActivity {
         transform.setRenderable(modelRenderable);
         transform.select();
     }
-
-//    public void loadModels() {
-//        WeakReference<MainActivity> weakActivity = new WeakReference<>(this);
-//        ModelRenderable.builder()
-////                .setSource((Context)this, Uri.parse("https://storage.googleapis.com/ar-answers-in-search-models/static/Tiger/model.glb"))
-//                .setSource((Context)this, R.raw.bread)
-////                .Ń(true)
-////                .setAsyncLoadEnabled(true)
-//                .build()
-//                .thenAccept(model -> {
-//                    MainActivity activity = weakActivity.get();
-//                    if (activity != null) {
-//                        activity.model = model;
-//                    }
-//                })
-//                .exceptionally(throwable -> {
-//                    Toast.makeText(
-//                            this, "Unable to load model", Toast.LENGTH_LONG).show();
-//                    return null;
-//                });
-//        ViewRenderable.builder()
-////                .setView(this, R.layout.view_model_title)
-//                .build()
-//                .thenAccept(viewRenderable -> {
-//                    MainActivity activity = weakActivity.get();
-//                    if (activity != null) {
-//                        activity.viewRenderable = viewRenderable;
-//                    }
-//                })
-//                .exceptionally(throwable -> {
-//                    Toast.makeText(this, "Unable to load model", Toast.LENGTH_LONG).show();
-//                    return null;
-//                });
-//    }
-//
-//    @Override
-//    public void onTapPlane(HitResult hitResult, Plane plane, MotionEvent motionEvent) {
-//        if (model == null || viewRenderable == null) {
-//            Toast.makeText(this, "Loading...", Toast.LENGTH_SHORT).show();
-//            return;
-//        }
-//
-//        // Create the Anchor.
-//        Anchor anchor = hitResult.createAnchor();
-//        AnchorNode anchorNode = new AnchorNode(anchor);
-//        anchorNode.setParent(arFragment.getArSceneView().getScene());
-//
-//        // Create the transformable model and add it to the anchor.
-//        TransformableNode model = new TransformableNode(arFragment.getTransformationSystem());
-//        model.setParent(anchorNode);
-//        model.setRenderable(this.model);
-////                .animate(true).start();
-//        model.select();
-//
-//        Node titleNode = new Node();
-//        titleNode.setParent(model);
-//        titleNode.setEnabled(false);
-//        titleNode.setLocalPosition(new Vector3(0.0f, 1.0f, 0.0f));
-//        titleNode.setRenderable(viewRenderable);
-//        titleNode.setEnabled(true);
-//    }
 }

@@ -61,7 +61,8 @@ dependencies {
     implementation 'com.google.ar.sceneform:core:1.15.0'
 
 //    implementation "com.gorisse.thomas.sceneform:sceneform:1.21.0"
-//    implementation "androidx.fragment:fragment:1.5.5"
+    implementation "androidx.fragment:fragment:1.5.5"
+
 
 }
 

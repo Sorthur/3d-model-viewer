@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:onClick="runViewer3d"
     tools:context="com.example.pwta_proj2.MainActivity">
 
     <RelativeLayout
@@ -12,6 +13,7 @@
         android:background="@color/white">
 
         <FrameLayout
+            android:id="@+id/contentFragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -33,6 +35,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="5dp"
                 android:layout_weight="1"
+                android:onClick="runViewer3d"
                 android:text="Load Model" />
 
             <Button
@@ -45,15 +48,5 @@
         </LinearLayout>
 
     </RelativeLayout>
-
-    <fragment
-        android:id="@+id/arFragment"
-        android:name="com.google.ar.sceneform.ux.ArFragment"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
