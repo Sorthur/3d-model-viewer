@@ -96,7 +96,6 @@ public class MainActivity extends AppCompatActivity {
             System.out.println(e);
         }
 
-
         // Load model.glb from assets folder or http url
         arFragment = (ArFragment) supportFragmentManager.findFragmentById(R.id.arFragment);
 

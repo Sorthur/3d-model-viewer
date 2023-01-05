@@ -57,7 +57,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-
             <com.example.pwta_proj2.MultiTouchGestureView
                 android:id="@+id/imageView"
                 android:layout_width="wrap_content"
@@ -65,9 +64,8 @@
                 android:src="@drawable/test_picture"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true" />
+
         </TableRow>
-
-
     </TableLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
