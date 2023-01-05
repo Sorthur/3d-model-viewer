@@ -56,7 +56,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     // Provides ARCore Session and related resources.
-    implementation 'com.google.ar:core:1.15.0'
+    implementation 'com.google.ar:core:1.32.0'
 
     // Provides ArFragment, and other UX resources.
     implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.15.0'
@@ -65,13 +65,20 @@ dependencies {
     implementation 'com.google.ar.sceneform:core:1.15.0'
     implementation 'com.dinuscxj:multitouchgesturedetector:1.0.0'
 
+//    implementation "com.gorisse.thomas.sceneform:sceneform:1.21.0"
+    implementation "androidx.fragment:fragment:1.5.5"
 
 
-
-    apply plugin: 'com.google.ar.sceneform.plugin'
-
-    sceneform.asset('sampledata/bread.obj', // 'Source Asset Path' specified during import.
-            'default',                         // 'Material Path' specified during import.
-            'sampledata/bread.sfa',             // '.sfa Output Path' specified during import.
-            'src/main/res/raw/bread')
 }
+
+apply plugin: 'com.google.ar.sceneform.plugin'
+
+sceneform.asset('sampledata/bread/bread.obj', // 'Source Asset Path' specified during import.
+        'default',                         // 'Material Path' specified during import.
+        'sampledata/bread/bread.sfa',             // '.sfa Output Path' specified during import.
+        'src/main/res/raw/bread')
+
+sceneform.asset('sampledata/dom/dom3d.obj', // 'Source Asset Path' specified during import.
+        'default',                         // 'Material Path' specified during import.
+        'sampledata/dom/dom3d.sfa',             // '.sfa Output Path' specified during import.
+        'src/main/res/raw/dom3d')
