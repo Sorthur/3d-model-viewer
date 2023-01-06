@@ -78,7 +78,17 @@ sceneform.asset('sampledata/bread/bread.obj', // 'Source Asset Path' specified d
         'sampledata/bread/bread.sfa',             // '.sfa Output Path' specified during import.
         'src/main/res/raw/bread')
 
-sceneform.asset('sampledata/dom/dom3d.obj', // 'Source Asset Path' specified during import.
+sceneform.asset('sampledata/dom/dom.obj', // 'Source Asset Path' specified during import.
         'default',                         // 'Material Path' specified during import.
-        'sampledata/dom/dom3d.sfa',             // '.sfa Output Path' specified during import.
-        'src/main/res/raw/dom3d')
+        'sampledata/dom/dom.sfa',             // '.sfa Output Path' specified during import.
+        'src/main/res/raw/dom')
+
+sceneform.asset('sampledata/car/car.obj', // 'Source Asset Path' specified during import.
+        'default',                         // 'Material Path' specified during import.
+        'sampledata/car/car.sfa',             // '.sfa Output Path' specified during import.
+        'src/main/res/raw/car')
+
+sceneform.asset('sampledata/terr/terrain.obj', // 'Source Asset Path' specified during import.
+        'default',                         // 'Material Path' specified during import.
+        'sampledata/terr/terrain.sfa',             // '.sfa Output Path' specified during import.
+        'src/main/res/raw/terrain')

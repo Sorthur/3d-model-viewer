@@ -1,0 +1,163 @@
+{
+  materials: [
+    {
+      name: 'Translucent_Glass_Tinted',
+      parameters: [
+        {
+          baseColor: 'Translucent_Glass_Tinted',
+        },
+        {
+          baseColorTint: [
+            0.031372999999999998,
+            0.78823500000000002,
+            0.94509799999999999,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: 0.47999999999999998,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'Steel_Brushed_Stainless',
+      parameters: [
+        {
+          baseColor: 'Steel_Brushed_Stainless',
+        },
+        {
+          baseColorTint: [
+            0.74509800000000004,
+            0.054901999999999999,
+            0.074510000000000007,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: '_Steel_Brushed_Stainless_1',
+      parameters: [
+        {
+          baseColor: '_Steel_Brushed_Stainless_1',
+        },
+        {
+          baseColorTint: [
+            0.71764700000000003,
+            0.73333300000000001,
+            0.74509800000000004,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'FrontColor',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'Formica_Laminate_Dark',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            0.196078,
+            0.207843,
+            0.235294,
+            1,
+          ],
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+    ],
+    collision: {},
+    file: 'sampledata/car/car.obj',
+    name: 'car',
+    recenter: 'root',
+  },
+  samplers: [
+    {
+      file: 'sampledata/car/car/_Steel_Brushed_Stainless_1.jpg',
+      name: '_Steel_Brushed_Stainless_1',
+      pipeline_name: 'car/_Steel_Brushed_Stainless_1.jpg',
+    },
+    {
+      file: 'sampledata/car/car/Steel_Brushed_Stainless.jpg',
+      name: 'Steel_Brushed_Stainless',
+      pipeline_name: 'car/Steel_Brushed_Stainless.jpg',
+    },
+    {
+      file: 'sampledata/car/car/Translucent_Glass_Tinted.jpg',
+      name: 'Translucent_Glass_Tinted',
+      pipeline_name: 'car/Translucent_Glass_Tinted.jpg',
+    },
+  ],
+  version: '0.54:2',
+}

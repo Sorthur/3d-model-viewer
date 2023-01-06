@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void runViewer3d(View v) {
-        String[] listItems = new String[]{"dom - OBJ file"};
+        String[] listItems = new String[]{"dom", "samochód", "wyspa"};
         final int[] checkedItem = {-1};
 
         builder = new AlertDialog.Builder(MainActivity.this);
@@ -105,9 +105,16 @@ public class MainActivity extends AppCompatActivity {
             imgView = findViewById(R.id.imageView);
 
             switch (listItems[which]) {
-                case "dom - OBJ file":
-                    chosen3dModel = R.raw.dom3d;
+                case "dom":
+                    chosen3dModel = R.raw.dom;
                     break;
+                case "samochód":
+                    chosen3dModel = R.raw.car;
+                    break;
+                case "wyspa":
+                    chosen3dModel = R.raw.terrain;
+                    break;
+
                 default:
                     dialog.dismiss();
             }

@@ -1,0 +1,29 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2012 Trimble Navigation Limited
+
+newmtl Sandstone
+Ka 0.000000 0.000000 0.000000
+Kd 0.462745 0.317647 0.203922
+Ks 0.330000 0.330000 0.330000
+map_Kd terrain/Sandstone.jpg
+
+newmtl _Water_Pool_Light_1
+Ka 0.000000 0.000000 0.000000
+Kd 0.250980 0.584314 0.654902
+Ks 0.330000 0.330000 0.330000
+d 0.600000
+map_Kd terrain/_Water_Pool_Light_1.jpg
+
+newmtl FrontColor
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.330000 0.330000 0.330000
+
+newmtl Water_Pool_Light
+Ka 0.000000 0.000000 0.000000
+Kd 0.250980 0.584314 0.654902
+Ks 0.330000 0.330000 0.330000
+d 0.600000
+map_Kd terrain/Water_Pool_Light.jpg
+
