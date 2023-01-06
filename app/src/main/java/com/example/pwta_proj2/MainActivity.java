@@ -198,7 +198,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void select2DModel(View view) {
         Context context = getApplicationContext();
-        String[] listItems = new String[]{"JPEG File", "BMP File", "PNG File"};
+        String[] listItems = new String[]{"BMP File", "PNG File"};
         final int[] checkedItem = {-1};
 
         builder = new AlertDialog.Builder(MainActivity.this);
@@ -212,14 +212,14 @@ public class MainActivity extends AppCompatActivity {
             imgView = findViewById(R.id.imageView);
 
             switch (listItems[which]) {
-                case "JPEG File":
-                    imgView.setImage(context.getResources().getDrawable(R.drawable.androidjpeg));
-                    break;
+//                case "JPEG File":
+//                    imgView.setImage(context.getResources().getDrawable(R.drawable.androidjpeg));
+//                    break;
                 case "BMP File":
-                    imgView.setImage(context.getResources().getDrawable(R.drawable.androidbmp));
+                    imgView.setImage(context.getResources().getDrawable(R.drawable.car));
                     break;
                 case "PNG File":
-                    imgView.setImage(context.getResources().getDrawable(R.drawable.androidpng));
+                    imgView.setImage(context.getResources().getDrawable(R.drawable.dom));
                     break;
                 default:
                     dialog.dismiss();
