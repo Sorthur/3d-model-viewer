@@ -73,11 +73,6 @@ dependencies {
 
 apply plugin: 'com.google.ar.sceneform.plugin'
 
-sceneform.asset('sampledata/bread/bread.obj', // 'Source Asset Path' specified during import.
-        'default',                         // 'Material Path' specified during import.
-        'sampledata/bread/bread.sfa',             // '.sfa Output Path' specified during import.
-        'src/main/res/raw/bread')
-
 sceneform.asset('sampledata/dom/dom.obj', // 'Source Asset Path' specified during import.
         'default',                         // 'Material Path' specified during import.
         'sampledata/dom/dom.sfa',             // '.sfa Output Path' specified during import.
